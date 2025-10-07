@@ -23,8 +23,8 @@ def option_default():
 while True:
     print("\n+-------- !TEST INTERFACE --------+")
     print("| Press A number to Enter a Mode  |")
-    print("| 1. Standard Identification Game |") # Select 4, 5, 6 tags to association train.
-    print("| 2. Shuffle Identification Game  |") # Same tag Combination, shuffled each round (Association Training)
+    print("| 1. Identification Game          |") # Select 4, 5, 6 tags to association train.
+    print("| 2. Tag Shuffle                  |") # Same tag Combination, shuffled each round (Association Training)
     print("| 3. Association Trainer          |") # Training mode, highlights the correct tag in Green for (Association Training).
     print("| 3. Exit                         |")
     print("+---------------------------------+")
