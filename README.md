@@ -1,2 +1,2 @@
-# Python Random Sampler Game
+# Python Random Sampler
 An Experimental Development Project.
