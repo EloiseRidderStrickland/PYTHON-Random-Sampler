@@ -4,6 +4,16 @@
 
 import random
 import string
+from array import *
+
+# Test
+def main():
+    original = join_tag()
+    shuffled = shuffle_list(original)
+    print(f"\n Match: {original}")
+    print("\n Options")
+    for index, item in enumerate(shuffled, start=1):
+        print(f"{index}. {item}")
 
 # === RANDOM LETTER SEQUENCE GENERATOR ===
 def random_letters(length):                                                 # Character Component (Uppercase only)
@@ -53,13 +63,15 @@ def shuffle_list(base_tag):
         random.shuffle(shuffled_letters)
         random.shuffle(shuffled_numbers)
         
-        # Combine: first letter + shuffled remaining letters + shuffled numbers
+        # Combine
         match_tag = first_letter + ''.join(shuffled_letters + shuffled_numbers)
         shuffled_tags.append(match_tag)
+
+        # Add unique check here.
     
     return shuffled_tags
 
-
-        
-
+# Test     
+if __name__ == "__main__":
+    main()
 

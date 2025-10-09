@@ -5,14 +5,7 @@ import random_generators
 
 def option_1():
     print("\n Game 1.")
-
-    original = random_generators.join_tag()
-    shuffled = random_generators.shuffle_list(original)
-    print(f"\n Match: {original}")
-    print("\n Options")
-    for index, item in enumerate(shuffled, start=1):
-        print(f"{index}. {item}")
-
+    
 def option_2():
     print("Game 2.")
 
