@@ -4,7 +4,6 @@
 
 import random
 import string
-from array import *
 
 # Test
 def main():
@@ -41,20 +40,23 @@ def join_tag():
 # === SHUFFLED STRING LIST === (Selection Match Case)
 def shuffle_list(base_tag):
     # Splits into base components
-    letters = base_tag[:3]                                                  # First 3 characters (the letters)
-    numbers = base_tag[3:]                                                  # Remaining characters (the digits)
+    letters = base_tag[:3]                                                  # First 3 characters (the letters).
+    numbers = base_tag[3:]                                                  # Remaining characters (the digits).
     
     # Separate first letter from the rest
-    first_letter = letters[0]                                               # Keep first letter fixed
-    remaining_letters = letters[1:]                                         # Letters to shuffle
+    first_letter = letters[0]                                               # Keep first letter fixed.
+    remaining_letters = letters[1:]                                         # Letters to shuffle.
     
     # Convert to lists for shuffling
-    letter = list(remaining_letters)                                        # Converts letters to a list
-    number = list(numbers)                                                  # Converts numbers
-    
+    letter = list(remaining_letters)                                        # Converts letters to a list.
+    number = list(numbers)                                                  # Converts numbers.
+
+    shuffled_tags = set()                                                   # Using a 'set' for uniqueness.
+    max_attempts = 25                                                       # Prevents the program from inifinitly looping when no unique combiantions are found,
+    attempts = 0
+
     # Create 3 unique shuffled combinations
-    shuffled_tags = []
-    for i in range(3):                                                      # Creates three unique combinations.
+    while len(shuffled_tags) < 3 and attempts < max_attempts:                                                      # Creates three unique combinations.
         # Copy
         shuffled_letters = letter.copy()
         shuffled_numbers = number.copy()
@@ -64,12 +66,16 @@ def shuffle_list(base_tag):
         random.shuffle(shuffled_numbers)
         
         # Combine
-        match_tag = first_letter + ''.join(shuffled_letters + shuffled_numbers)
-        shuffled_tags.append(match_tag)
+        match_tag = first_letter + ''.join(shuffled_letters) + ''.join(shuffled_numbers)
+        shuffled_tags.add(match_tag)
 
         # Add unique check here.
+    if match_tag != base_tag != join_tag:
+        shuffled_tags.add(match_tag)
+
+        attempts += 1
     
-    return shuffled_tags
+    return list(shuffled_tags)
 
 # Test     
 if __name__ == "__main__":
