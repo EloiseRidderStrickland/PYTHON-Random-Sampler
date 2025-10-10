@@ -12,9 +12,9 @@ def option_1():
     shuffled = tag_generation.shuffle_list(original)
 
 # Inserts the 'base_tag' (original) into the list with a random index.
-    random_index = random.randint(0, len(shuffled))
+    random_index = random.randint(0, len(shuffled) - 1)
     shuffled.insert(random_index, original)
-    
+
 # Print Results
     print(f"\n Match: {original}")
     print("\n Options")
