@@ -39,7 +39,7 @@ def shuffle_list(base_tag):
     attempts = 0
 
     # Create 3 unique shuffled combinations
-    while len(shuffled_tags) < 3 and attempts < max_attempts:                                                      # Creates three unique combinations.
+    while len(shuffled_tags) < 4 and attempts < max_attempts:                                                      # Creates three unique combinations.
         # Copy
         shuffled_letters = letter.copy()
         shuffled_numbers = number.copy()
@@ -50,12 +50,11 @@ def shuffle_list(base_tag):
         
         # Combine
         match_tag = first_letter + ''.join(shuffled_letters) + ''.join(shuffled_numbers)
-        shuffled_tags.add(match_tag)
 
         # Add unique check here.
-    if match_tag != base_tag != join_tag:
-        shuffled_tags.add(match_tag)
+        if match_tag != base_tag:
+            shuffled_tags.add(match_tag)
 
-        attempts += 1
+    attempts += 1
     
     return list(shuffled_tags)

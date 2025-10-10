@@ -2,11 +2,20 @@
 # Author :: Eloise Ridder-Strickland
 # PURPOSE :: Text Based Interface Logic.
 import tag_generation
+import random
 
 def option_1():
     print("\n Test Set 1.")
+
+# Pulls the 'base_tag' and 'shuffled_list'.
     original = tag_generation.join_tag()
     shuffled = tag_generation.shuffle_list(original)
+
+# Inserts the 'base_tag' (original) into the list with a random index.
+    random_index = random.randint(0, len(shuffled))
+    shuffled.insert(random_index, original)
+    
+# Print Results
     print(f"\n Match: {original}")
     print("\n Options")
     for index, item in enumerate(shuffled, start=1):
