@@ -1,11 +1,17 @@
 
 # Author :: Eloise Ridder-Strickland
 # PURPOSE :: Text Based Interface Logic.
-import random_generators
+import tag_generation
 
 def option_1():
-    print("\n Game 1.")
-    
+    print("\n Test Set 1.")
+    original = tag_generation.join_tag()
+    shuffled = tag_generation.shuffle_list(original)
+    print(f"\n Match: {original}")
+    print("\n Options")
+    for index, item in enumerate(shuffled, start=1):
+        print(f"{index}. {item}")
+
 def option_2():
     print("Game 2.")
 

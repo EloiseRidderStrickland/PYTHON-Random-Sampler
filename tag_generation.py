@@ -1,39 +1,22 @@
 
 # AUTHOR :: Eloise Ridder-Strickland
-# PURPOSE :: Generate a random Alpha-numeric six digit string.
+# PURPOSE :: Collect & Combine Tag elements to process for uniqueness.
 
+import generators
 import random
-import string
-
-# Test
-def main():
-    original = join_tag()
-    shuffled = shuffle_list(original)
-    print(f"\n Match: {original}")
-    print("\n Options")
-    for index, item in enumerate(shuffled, start=1):
-        print(f"{index}. {item}")
-
-# === RANDOM LETTER SEQUENCE GENERATOR ===
-def random_letters(length):                                                 # Character Component (Uppercase only)
-    char = string.ascii_uppercase                                           # ASCII Character Map
-    char_comp = ''.join(random.choice(char) for i in range(length))         # Takes the result and joins them into a string.
-    return(char_comp)
-
-# === RANDOM NUMBER SEQUENCE GENERATOR ===
-def random_integers():                                                       
-    integer_comp = random.randint(100, 999)                                 # Generates a random 3 digit number.
-    return(integer_comp)
-
-# --------------------------------------------------
     
+"""
+    The 'join_tag' function collects the results of the 'generators.py' call
+    and joins the letter component to the integer component and returns the string 'tag'.
+"""
+
 # === MATCH STRING === (Base Tag)
 def join_tag():
-    tag = random_letters(3) + str(random_integers())                        # Converts integers into String and combines into a tag.
+    tag = generators.random_letters(3) + str(generators.random_integers())                        # Converts integers into String and combines into a tag.
     return(tag)
 
 """
-    the 'shuffle_list' function takes the base string 'tag' as defined in 'join_tag'
+    The 'shuffle_list' function takes the base string 'tag' as defined in 'join_tag'
     and seperates the distinct values into there respective halves retaining the first character.
 """
 
@@ -76,8 +59,3 @@ def shuffle_list(base_tag):
         attempts += 1
     
     return list(shuffled_tags)
-
-# Test     
-if __name__ == "__main__":
-    main()
-
