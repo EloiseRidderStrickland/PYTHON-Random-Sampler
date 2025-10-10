@@ -9,6 +9,7 @@ The program generates an alpha-numeric string of three *upper-case letters* and 
 
 ### Running The Test Driver
 > The project it currently in a experimental phase and therefore is a text-based terminal run application that can be used either directly through a command line or similar application on Windows, or alternatively through an IDE such as *Visual Studio Code*.
+
 To Use: Download the `.zip` to your prefered location and extract the contents. Open a terminal and `cd "C:\User\computer\folder_location..."` then use the `python test_driver.py` to envoke the program, the menu will appear and you can follow the prompts for furtehr action.
 
 > NOTICE: In order to use the program you will need to have Python (or python3) locally installed onto your device. See details at: [Python's Official Website](https://www.python.org//downloads/).
