@@ -31,9 +31,9 @@ def option_default():
 while True:
     print("\n+-------- !TEST INTERFACE --------+")
     print("| Press A number to Enter a Mode  |")
-    print("| 1. Identification Game          |") # Select 4, 5, 6 tags to association train.
-    print("| 2. Tag Shuffle                  |") # Same tag Combination, shuffled each round (Association Training)
-    print("| 3. Association Trainer          |") # Training mode, highlights the correct tag in Green for (Association Training).
+    print("| 1. Tag Generator Game (List)    |") # Select 4, 5, 6 tags to association train.
+    print("| 2. Test Space 2                 |") # Same tag Combination, shuffled each round (Association Training)
+    print("| 3. Test Space 3                 |") # Training mode, highlights the correct tag in Green for (Association Training).
     print("| 3. Exit                         |")
     print("+---------------------------------+")
     choice = input("Start: ")
@@ -48,3 +48,7 @@ while True:
         break
     else:
         option_default()
+
+        # Standard Identification Game
+        # Tag Shuffle
+        # Association Trainer
